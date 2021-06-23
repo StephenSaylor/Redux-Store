@@ -11,6 +11,14 @@ import {
   TOGGLE_CART,
 } from './actions';
 
+const initialState = {
+  products: [],
+  categories: [],
+  currentCategory: '',
+  cart: [],
+  cartOpen: false
+}
+
 // TODO: To get a better understand of how a reducer works - add comments to the various actions in the reducer
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -96,3 +104,5 @@ export const reducer = (state, action) => {
 export function useProductReducer(initialState) {
   return useReducer(reducer, initialState);
 }
+
+export default reducers 
