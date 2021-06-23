@@ -1,8 +1,9 @@
 import React, { createContext, useContext } from "react";
 import { useProductReducer } from './reducers'
-
+import { createStore } from redux
 const StoreContext = createContext();
 const { Provider } = StoreContext;
+import reducer from './reducer'
 
 const StoreProvider = ({ value = [], ...props }) => {
   const [state, dispatch] = useProductReducer({
@@ -21,3 +22,5 @@ const useStoreContext = () => {
 };
 
 export { StoreProvider, useStoreContext };
+
+export default createStore(reducer)
